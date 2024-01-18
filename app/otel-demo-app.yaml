@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-otel-demo
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    release: my-otel-demo
+spec:
+  destination:
+    name: in-cluster
+    namespace: monitoring
+  project: default
+  source:
+    repoURL: 'https://open-telemetry.github.io/opentelemetry-helm-charts'
+    targetRevision: 0.22.3
+    chart: opentelemetry-demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
