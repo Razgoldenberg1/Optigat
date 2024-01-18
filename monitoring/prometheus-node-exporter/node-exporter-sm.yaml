@@ -1,0 +1,29 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app.kubernetes.io/component: metrics
+    app.kubernetes.io/instance: prometheus-node-exporter
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: prometheus-node-exporter
+    app.kubernetes.io/part-of: prometheus-node-exporter
+    app.kubernetes.io/version: 1.5.0
+    helm.sh/chart: prometheus-node-exporter-4.13.0
+    app: node-exporter
+    serviceMonitorSelector: prometheus
+    prometheus: argo-cd-grafana
+  name: node-exporter
+  namespace: argocd
+spec:
+  endpoints:
+  - honorLabels: true
+    interval: 30s
+    path: /metrics
+    targetPort: 9100
+  jobLabel: node-exporter
+  namespaceSelector:
+    matchNames:
+    - argocd
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: prometheus-node-exporter

@@ -19,6 +19,9 @@ spec:
       values: |-
         hostRootFsMount:
           enabled: false
+        prometheus:
+          monitor:
+            enabled: true
     chart: prometheus-node-exporter
   syncPolicy:
     automated:
