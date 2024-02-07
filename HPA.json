@@ -1,0 +1,1241 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 637,
+  "iteration": 1706434716181,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${thanosQueryFrontend}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 13,
+        "x": 0,
+        "y": 0
+      },
+      "id": 16,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.1.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${thanosQueryFrontend}"
+          },
+          "exemplar": true,
+          "expr": "sum by(horizontalpodautoscaler)(kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$CX_ENV_ID\"})",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ operation }}",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "title": "HPA current replicas",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${thanosQueryFrontend}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 11,
+        "x": 13,
+        "y": 0
+      },
+      "id": 17,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.1.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${thanosQueryFrontend}"
+          },
+          "exemplar": true,
+          "expr": "sum by(horizontalpodautoscaler)(kube_horizontalpodautoscaler_spec_max_replicas{CX_LEVEL=\"$CX_ENV_ID\"})",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ operation }}",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "title": "HPA max replicas",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "columns": [
+        {
+          "$$hashKey": "object:612",
+          "text": "Time",
+          "value": "Time"
+        },
+        {
+          "$$hashKey": "object:613",
+          "text": "Value #A",
+          "value": "Value #A"
+        },
+        {
+          "$$hashKey": "object:614",
+          "text": "Value #B",
+          "value": "Value #B"
+        },
+        {
+          "$$hashKey": "object:615",
+          "text": "Value #C",
+          "value": "Value #C"
+        },
+        {
+          "$$hashKey": "object:616",
+          "text": "Value #D",
+          "value": "Value #D"
+        },
+        {
+          "$$hashKey": "object:617",
+          "text": "Value #E",
+          "value": "Value #E"
+        },
+        {
+          "$$hashKey": "object:618",
+          "text": "Value #F",
+          "value": "Value #F"
+        },
+        {
+          "$$hashKey": "object:619",
+          "text": "pod",
+          "value": "pod"
+        }
+      ],
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${thanosQueryFrontend}"
+      },
+      "fill": 1,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 13,
+        "x": 0,
+        "y": 12
+      },
+      "id": 4,
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "minSpan": 24,
+      "nullPointMode": "null as zero",
+      "renderer": "flot",
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": false
+      },
+      "spaceLength": 10,
+      "span": 24,
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Time",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "Bandwidth Received",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #A",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Bandwidth Transmitted",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #B",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Rate of Received Packets",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #C",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Received Packets Dropped",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #E",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets Dropped",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #F",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Pod",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTooltip": "Drill down",
+          "linkUrl": "d/7a18067ce943a40ae25454675c19ff5c/kubernetes-networking-pod?orgId=1&refresh=30s&var-namespace=$namespace&var-pod=$__cell",
+          "pattern": "pod",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${thanosQueryFrontend}"
+          },
+          "expr": "(kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$CX_ENV_ID\"} >= ((kube_horizontalpodautoscaler_spec_max_replicas{CX_LEVEL=\"$CX_ENV_ID\"})/100)*60)",
+          "format": "table",
+          "instant": true,
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "HpaHighUtilization",
+      "transform": "table",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "Time",
+                "CX_ENV_ID",
+                "endpoint",
+                "namespace",
+                "Value",
+                "horizontalpodautoscaler"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "table-old"
+    },
+    {
+      "columns": [
+        {
+          "$$hashKey": "object:612",
+          "text": "Time",
+          "value": "Time"
+        },
+        {
+          "$$hashKey": "object:613",
+          "text": "Value #A",
+          "value": "Value #A"
+        },
+        {
+          "$$hashKey": "object:614",
+          "text": "Value #B",
+          "value": "Value #B"
+        },
+        {
+          "$$hashKey": "object:615",
+          "text": "Value #C",
+          "value": "Value #C"
+        },
+        {
+          "$$hashKey": "object:616",
+          "text": "Value #D",
+          "value": "Value #D"
+        },
+        {
+          "$$hashKey": "object:617",
+          "text": "Value #E",
+          "value": "Value #E"
+        },
+        {
+          "$$hashKey": "object:618",
+          "text": "Value #F",
+          "value": "Value #F"
+        },
+        {
+          "$$hashKey": "object:619",
+          "text": "pod",
+          "value": "pod"
+        }
+      ],
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${thanosQueryFrontend}"
+      },
+      "fill": 1,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 7,
+        "w": 11,
+        "x": 13,
+        "y": 12
+      },
+      "id": 9,
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "minSpan": 24,
+      "nullPointMode": "null as zero",
+      "renderer": "flot",
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": false
+      },
+      "spaceLength": 10,
+      "span": 24,
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Time",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "Bandwidth Received",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #A",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Bandwidth Transmitted",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #B",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Rate of Received Packets",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #C",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Received Packets Dropped",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #E",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets Dropped",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #F",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Pod",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTooltip": "Drill down",
+          "linkUrl": "d/7a18067ce943a40ae25454675c19ff5c/kubernetes-networking-pod?orgId=1&refresh=30s&var-namespace=$namespace&var-pod=$__cell",
+          "pattern": "pod",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${thanosQueryFrontend}"
+          },
+          "expr": "(kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$CX_ENV_ID\"} == kube_horizontalpodautoscaler_spec_max_replicas{CX_LEVEL=\"$CX_ENV_ID\"})",
+          "format": "table",
+          "instant": true,
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "HpaMaxReplicas",
+      "transform": "table",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "Time",
+                "CX_LEVEL",
+                "namespace",
+                "Value",
+                "horizontalpodautoscaler"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "table-old"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${datasource}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 13,
+        "x": 0,
+        "y": 19
+      },
+      "id": 18,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.1.8",
+      "targets": [
+        {
+          "datasource": {
+            "uid": "${datasource}"
+          },
+          "exemplar": true,
+          "expr": "count by (CX_LEVEL)(kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$CX_ENV_ID\"} >= ((kube_horizontalpodautoscaler_spec_max_replicas{CX_LEVEL=\"$CX_ENV_ID\"})/100)*60)",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ operation }}",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "title": "HpaHighUtilization ",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "${thanosQueryFrontend}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 11,
+        "x": 13,
+        "y": 19
+      },
+      "id": 19,
+      "options": {
+        "legend": {
+          "calcs": [
+            "last"
+          ],
+          "displayMode": "table",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "8.1.8",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${thanosQueryFrontend}"
+          },
+          "exemplar": true,
+          "expr": "count by (CX_LEVEL)(kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$CX_ENV_ID\"} == kube_horizontalpodautoscaler_spec_max_replicas{CX_LEVEL=\"$CX_ENV_ID\"})",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ operation }}",
+          "queryType": "randomWalk",
+          "refId": "A"
+        }
+      ],
+      "title": "HpaMaxReplicas",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "columns": [
+        {
+          "$$hashKey": "object:612",
+          "text": "Time",
+          "value": "Time"
+        },
+        {
+          "$$hashKey": "object:613",
+          "text": "Value #A",
+          "value": "Value #A"
+        },
+        {
+          "$$hashKey": "object:614",
+          "text": "Value #B",
+          "value": "Value #B"
+        },
+        {
+          "$$hashKey": "object:615",
+          "text": "Value #C",
+          "value": "Value #C"
+        },
+        {
+          "$$hashKey": "object:616",
+          "text": "Value #D",
+          "value": "Value #D"
+        },
+        {
+          "$$hashKey": "object:617",
+          "text": "Value #E",
+          "value": "Value #E"
+        },
+        {
+          "$$hashKey": "object:618",
+          "text": "Value #F",
+          "value": "Value #F"
+        },
+        {
+          "$$hashKey": "object:619",
+          "text": "pod",
+          "value": "pod"
+        }
+      ],
+      "datasource": {
+        "type": "prometheus",
+        "uid": "$datasource"
+      },
+      "fill": 1,
+      "fontSize": "100%",
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "id": 14,
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "minSpan": 24,
+      "nullPointMode": "null as zero",
+      "renderer": "flot",
+      "scroll": true,
+      "showHeader": true,
+      "sort": {
+        "col": 0,
+        "desc": false
+      },
+      "spaceLength": 10,
+      "span": 24,
+      "styles": [
+        {
+          "alias": "Time",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Time",
+          "thresholds": [],
+          "type": "hidden",
+          "unit": "short"
+        },
+        {
+          "alias": "Bandwidth Received",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #A",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Bandwidth Transmitted",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #B",
+          "thresholds": [],
+          "type": "number",
+          "unit": "Bps"
+        },
+        {
+          "alias": "Rate of Received Packets",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #C",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #D",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Received Packets Dropped",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #E",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Rate of Transmitted Packets Dropped",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": false,
+          "linkTooltip": "Drill down",
+          "linkUrl": "",
+          "pattern": "Value #F",
+          "thresholds": [],
+          "type": "number",
+          "unit": "pps"
+        },
+        {
+          "alias": "Pod",
+          "align": "auto",
+          "colors": [],
+          "dateFormat": "YYYY-MM-DD HH:mm:ss",
+          "decimals": 2,
+          "link": true,
+          "linkTooltip": "Drill down",
+          "linkUrl": "d/7a18067ce943a40ae25454675c19ff5c/kubernetes-networking-pod?orgId=1&refresh=30s&var-namespace=$namespace&var-pod=$__cell",
+          "pattern": "pod",
+          "thresholds": [],
+          "type": "number",
+          "unit": "short"
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "expr": "(kube_horizontalpodautoscaler_status_desired_replicas{CX_LEVEL=\"$cluster\"}) != (kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$cluster\"}) and (kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$cluster\"}) > (kube_horizontalpodautoscaler_spec_min_replicas{CX_LEVEL=\"$cluster\"}) and (kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$cluster\"}) < (kube_horizontalpodautoscaler_spec_max_replicas{CX_LEVEL=\"$cluster\"}) and changes(kube_horizontalpodautoscaler_status_current_replicas{CX_LEVEL=\"$cluster\"}[15m]) == 0",
+          "format": "table",
+          "instant": true,
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "refId": "A",
+          "step": 10
+        }
+      ],
+      "title": "HpaReplicaMismatch",
+      "transform": "table",
+      "transformations": [
+        {
+          "id": "filterFieldsByName",
+          "options": {
+            "include": {
+              "names": [
+                "Time",
+                "CX_LEVEL",
+                "namespace",
+                "Value",
+                "horizontalpodautoscaler"
+              ]
+            }
+          }
+        }
+      ],
+      "type": "table-old"
+    }
+  ],
+  "refresh": "5m",
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [
+    "migrated-c4c"
+  ],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "production",
+          "value": "production"
+        },
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "elasticsearch",
+          "value": "elasticsearch"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
+        "definition": "label_values(kube_pod_info{CX_LEVEL=\"$cluster\"}, namespace)",
+        "hide": 2,
+        "includeAll": true,
+        "multi": true,
+        "name": "namespace",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_pod_info{CX_LEVEL=\"$cluster\"}, namespace)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "thanos-query-frontend",
+          "value": "thanos-query-frontend"
+        },
+        "hide": 2,
+        "includeAll": false,
+        "label": "thanosQueryFrontend",
+        "multi": false,
+        "name": "thanosQueryFrontend",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "/thanos-query-frontend-*/",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "prod",
+          "value": "prod"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${thanosQueryFrontend}"
+        },
+        "definition": "label_values(label_cx_env_type)",
+        "description": "Type of environment - you also need to choose CX_ENV_ID in the case of production",
+        "hide": 0,
+        "includeAll": false,
+        "label": "CX_ENV_TYPE",
+        "multi": false,
+        "name": "CX_ENVTYPE",
+        "options": [],
+        "query": {
+          "query": "label_values(label_cx_env_type)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "annapurna2",
+          "value": "annapurna2"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${thanosQueryFrontend}"
+        },
+        "definition": "label_values(kube_pod_labels{label_cx_env_type=~\"$CX_ENVTYPE\"}, CX_LEVEL)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "CX_ENV_ID",
+        "multi": false,
+        "name": "CX_ENV_ID",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_pod_labels{label_cx_env_type=~\"$CX_ENVTYPE\"}, CX_LEVEL)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "production",
+          "value": "production"
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${datasource}"
+        },
+        "definition": "label_values(kube_pod_info, CX_LEVEL)",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "cluster",
+        "options": [],
+        "query": {
+          "query": "label_values(kube_pod_info, CX_LEVEL)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "HPA",
+  "uid": "2CK8n-vVz",
+  "version": 12,
+  "weekStart": ""
+}
